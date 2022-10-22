@@ -16,7 +16,7 @@ Ao automatizar o provisionamento da infraestrutura com a IaC, os desenvolvedores
 
 ## Infraestrutura proposta
 
-![Untitled](Infraestrutura%20como%20Co%CC%81digo%20Script%20de%20Criac%CC%A7a%CC%83o%20de%2018cb91baa4fb4dcf8cf508b348df36e2/Untitled.png)
+![Untitled](https://github.com/AndersonGabrielCalasans/LinuxProject-InfraAsACode/blob/main/Infraestrutura%20como%20C%C3%B3digo%20Script%20de%20Cria%C3%A7%C3%A3o%20de%2018cb91baa4fb4dcf8cf508b348df36e2/Untitled.png)
 
 ## ****Definições****
 
@@ -33,83 +33,56 @@ Ao automatizar o provisionamento da infraestrutura com a IaC, os desenvolvedores
 - Como já tinha uma MV criada, exclui todos os diretórios, arquivos, grupos e usuários criados anteriormente;
     - Logado como root, no diretório raiz, exclui os diretórios já criados anteriormente:
         
-        <aside>
-        💡 rm -Rf /textos/
-        
-        </aside>
+         rm -Rf /textos/
         
     - Excluir todos os usuários criados antes:
-        
-        <aside>
-        💡 cat /etc/passwd  
-        ****userdel -r gabriel
-        
-        </aside>
-        
+           
+         cat /etc/passwd  
+         userdel -r gabriel
+                
     - Excluir os grupos:
-        
-        <aside>
-        💡 cat /etc/group
-        groupdel GRP_ADM
-        
-        </aside>
+           
+         cat /etc/group
+         groupdel GRP_ADM
         
     - Criando script:
+            
+         cd /
+         mkdir /script
+         nano iacl.sh
         
-        <aside>
-        💡 cd /
-        mkdir /script
-        nano iacl.sh
+        ![Untitled](https://github.com/AndersonGabrielCalasans/LinuxProject-InfraAsACode/blob/main/Infraestrutura%20como%20C%C3%B3digo%20Script%20de%20Cria%C3%A7%C3%A3o%20de%2018cb91baa4fb4dcf8cf508b348df36e2/Untitled%201.png)
         
-        </aside>
-        
-        ![Untitled](Infraestrutura%20como%20Co%CC%81digo%20Script%20de%20Criac%CC%A7a%CC%83o%20de%2018cb91baa4fb4dcf8cf508b348df36e2/Untitled%201.png)
-        
-        ![Untitled](Infraestrutura%20como%20Co%CC%81digo%20Script%20de%20Criac%CC%A7a%CC%83o%20de%2018cb91baa4fb4dcf8cf508b348df36e2/Untitled%202.png)
+        ![Untitled](https://github.com/AndersonGabrielCalasans/LinuxProject-InfraAsACode/blob/main/Infraestrutura%20como%20C%C3%B3digo%20Script%20de%20Cria%C3%A7%C3%A3o%20de%2018cb91baa4fb4dcf8cf508b348df36e2/Untitled%202.png)
         
     
     - Criando permissão de execução do script:
         
-        <aside>
-        💡 chmod +x iacl.sh
-        
-        </aside>
-        
+        chmod +x iacl.sh
+     
     - Testando script criado:
         
-        <aside>
-        💡 ./iacl.sh
+        ./iacl.sh
         
-        </aside>
-        
-        ![Untitled](Infraestrutura%20como%20Co%CC%81digo%20Script%20de%20Criac%CC%A7a%CC%83o%20de%2018cb91baa4fb4dcf8cf508b348df36e2/Untitled%203.png)
+        ![Untitled](https://github.com/AndersonGabrielCalasans/LinuxProject-InfraAsACode/blob/main/Infraestrutura%20como%20C%C3%B3digo%20Script%20de%20Cria%C3%A7%C3%A3o%20de%2018cb91baa4fb4dcf8cf508b348df36e2/Untitled%203.png)
         
 
 Tudo certo, agora iremos subir o projeto para um repositório no **GitHub:**
 
 - Verificando se o Git está instalado na VM:
-
-<aside>
-💡 apt install git -y
-
-</aside>
+          
+        apt install git -y
 
 - Configurando o git:
 
-<aside>
-💡 git config —global [user.email](http://user.email) “[EMAIL]”
-git config —global [user.](http://user.email)name “[NOME DO USUÁRIO]”
-
-</aside>
+        git config —global [user.email](http://user.email) “[EMAIL]”
+        git config —global [user.](http://user.email)name “[NOME DO USUÁRIO]”
 
 - Subindo o projeto:
 
-<aside>
-💡 git init
-git add .
-git commit -m “Arquivos IaC v.1”
-git branch -M main
-git remote add origin [git@github.com](mailto:git@github.com):AndersonGabrielCalasans/LinuxProject-InfraAsACode.git
-git push -u origin main
-
-</aside>
+        git init
+        git add .
+        git commit -m “Arquivos IaC v.1”
+        git branch -M main
+        git remote add origin [git@github.com](mailto:git@github.com):AndersonGabrielCalasans/LinuxProject-InfraAsACode.git
+        git push -u origin main
