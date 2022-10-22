@@ -33,23 +33,23 @@ Ao automatizar o provisionamento da infraestrutura com a IaC, os desenvolvedores
 - Como já tinha uma MV criada, exclui todos os diretórios, arquivos, grupos e usuários criados anteriormente;
     - Logado como root, no diretório raiz, exclui os diretórios já criados anteriormente:
         
-         rm -Rf /textos/
+            rm -Rf /textos/
         
     - Excluir todos os usuários criados antes:
            
-         cat /etc/passwd  
-         userdel -r gabriel
+             cat /etc/passwd  
+             userdel -r gabriel
                 
     - Excluir os grupos:
            
-         cat /etc/group
-         groupdel GRP_ADM
+             cat /etc/group
+             groupdel GRP_ADM
         
     - Criando script:
             
-         cd /
-         mkdir /script
-         nano iacl.sh
+             cd /
+             mkdir /script
+             nano iacl.sh
         
         ![Untitled](https://github.com/AndersonGabrielCalasans/LinuxProject-InfraAsACode/blob/main/Infraestrutura%20como%20C%C3%B3digo%20Script%20de%20Cria%C3%A7%C3%A3o%20de%2018cb91baa4fb4dcf8cf508b348df36e2/Untitled%201.png)
         
@@ -58,11 +58,11 @@ Ao automatizar o provisionamento da infraestrutura com a IaC, os desenvolvedores
     
     - Criando permissão de execução do script:
         
-        chmod +x iacl.sh
+            chmod +x iacl.sh
      
     - Testando script criado:
         
-        ./iacl.sh
+            ./iacl.sh
         
         ![Untitled](https://github.com/AndersonGabrielCalasans/LinuxProject-InfraAsACode/blob/main/Infraestrutura%20como%20C%C3%B3digo%20Script%20de%20Cria%C3%A7%C3%A3o%20de%2018cb91baa4fb4dcf8cf508b348df36e2/Untitled%203.png)
         
